@@ -1,0 +1,150 @@
+<div class="row align-center">
+    <div class="coumn small-10 medium-8 large-6">
+        <div class="text-center">
+            <h1>
+                Simple calculator
+            </h1>
+        </div>
+
+        <div class="text-center">
+            <h4>
+                Select theme
+            </h4>
+
+            <ul class="flex-container align-center align-middle themes">
+                <li class="theme" data-theme="night">Night</li>
+                <li class="theme selected" data-theme="day">Day</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="relative display">
+                <div class="history">1+265*78/444+666</div>
+
+                <div class="results">
+                    <textarea class="input-box" id="result" readonly></textarea>
+                </div>
+            </div>
+
+            <div class="keys_control" id="keys_control">
+                <ul class="keys">
+                    <li>
+                        <div class="key" data-role="clear" data-type="action" title="Clear all">
+                            AC
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="operator" data-type="operator">
+                            /
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="operator" data-type="operator">
+                            *
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="cancel" data-type="action">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 489.425 489.425">
+                                <path fill="#ffffff" d="M122.825 394.663c17.8 19.4 43.2 30.6 69.5 30.6h216.9c44.2 0 80.2-36 80.2-80.2v-200.7c0-44.2-36-80.2-80.2-80.2h-216.9c-26.4 0-51.7 11.1-69.5 30.6l-111.8 121.7c-14.7 16.1-14.7 40.3 0 56.4l111.8 121.8zm-93.7-161.6l111.8-121.8c13.2-14.4 32-22.6 51.5-22.6h216.9c30.7 0 55.7 25 55.7 55.7v200.6c0 30.7-25 55.7-55.7 55.7h-217c-19.5 0-38.3-8.2-51.5-22.6l-111.7-121.8c-6.1-6.6-6.1-16.6 0-23.2z"/>
+                                <path fill="#ffffff" d="M225.425 309.763c2.4 2.4 5.5 3.6 8.7 3.6s6.3-1.2 8.7-3.6l47.8-47.8 47.8 47.8c2.4 2.4 5.5 3.6 8.7 3.6s6.3-1.2 8.7-3.6c4.8-4.8 4.8-12.5 0-17.3l-47.9-47.8 47.8-47.8c4.8-4.8 4.8-12.5 0-17.3s-12.5-4.8-17.3 0l-47.8 47.8-47.8-47.8c-4.8-4.8-12.5-4.8-17.3 0s-4.8 12.5 0 17.3l47.8 47.8-47.8 47.8c-4.8 4.8-4.8 12.499-.1 17.3z"/>
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="keys">
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            7
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            8
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            9
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="operator" data-type="operator">
+                            %
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="keys">
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            4
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            5
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            6
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="operator" data-type="operator">
+                            -
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="keys">
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            1
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            2
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            3
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="operator" data-type="operator">
+                            +
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="keys">
+                    <li>
+                        <div class="key" data-role="number" data-type="number">
+                            0
+                        </div>
+                    </li>
+                    <li>
+                        <div class="key" data-role="decimal" data-type="symbol">
+                            .
+                        </div>
+                    </li>
+<!--                    <li>-->
+<!--                        <div class="key" data-role="bracket" data-type="symbol">-->
+<!--                            ()-->
+<!--                        </div>-->
+<!--                    </li>-->
+                    <li class="equals">
+                        <div class="key" data-role="calculate" data-type="action">
+                            =
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

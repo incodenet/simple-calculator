@@ -1,0 +1,172 @@
+@mixin font($weight, $sizeValue, $line, $color, $textTransform, $fontFamily: $baseFontFamily) {
+
+    @if $textTransform != 0 and $weight != 0 and $color != 0 {
+        font: $weight ($sizeValue / 16) + rem/$line $fontFamily;
+        color: $color;
+        text-transform: $textTransform;
+    }
+    @else if $textTransform == 0 and $weight != 0 and $color == 0 {
+        font: $weight ($sizeValue / 16) + rem/$line $fontFamily;
+    }
+    @else if $textTransform != 0 and $weight == 0 and $color == 0 {
+        font: ($sizeValue / 16) + rem/$line $fontFamily;
+        text-transform: $textTransform;
+    }
+    @else if $textTransform == 0 and $weight == 0 and $color != 0 {
+        font: ($sizeValue / 16) + rem/$line $fontFamily;
+        color: $color;
+    }
+    @else if $textTransform != 0 and $weight != 0 and $color == 0 {
+        font: $weight ($sizeValue / 16) + rem/$line $fontFamily;
+        text-transform: $textTransform;
+    }
+    @else if $textTransform != 0 and $weight == 0 and $color != 0 {
+        font: ($sizeValue / 16) + rem/$line $fontFamily;
+        color: $color;
+        text-transform: $textTransform;
+    }
+    @else if $textTransform == 0 and $weight != 0 and $color != 0 {
+        font: $weight ($sizeValue / 16) + rem/$line $fontFamily;
+        color: $color;
+    }
+    @else {
+        font: ($sizeValue / 16) + rem/$line $fontFamily;
+    }
+}
+  
+@mixin fluid-font($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+        }
+    }
+}
+
+@mixin flex-flow($flex_dir,$flex_wrap){
+    -ms-flex-flow: $flex_dir $flex_wrap;
+    flex-flow: $flex_dir $flex_wrap;
+}
+
+@mixin flex($grow,$shrink,$basis){
+    -ms-flex: $grow $shrink $basis;
+    flex: $grow $shrink $basis;
+}
+
+@mixin flex-basis($basis_num){
+    -ms-flex-basis: $basis_num;
+    flex-basis: $basis_num;
+}
+
+@mixin order($order_num){
+    -ms-order: $order_num;
+    order: $order_num;
+}
+
+@mixin justify($justify_val){
+    -ms-flex-pack: $justify_val;
+    justify-content: $justify_val;
+}
+
+@mixin align-items($align_val){
+    -ms-flex-align: $align_val;
+    align-items: $align_val;
+}
+
+@mixin align-content($align_content_val){
+    -ms-flex-line-pack: $align_content_val;
+    align-content: $align_content_val;
+}
+
+@mixin align-self($align_self_val){
+    -ms-align-self: $align_self_val;
+    align-self: $align_self_val;
+}
+
+@mixin transition($prop,$delay,$timing){
+	-webkit-transition: $prop $delay $timing;
+	-moz-transition: $prop $delay $timing;
+	transition: $prop $delay $timing;
+}
+
+@mixin transform-origin ($origin) {
+    -moz-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}
+
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin background_args($bg_size: cover, $position: center, $bg_repeat: no-repeat){
+    background-size: $bg_size;
+    background-position: $position;
+    background-repeat: $bg_repeat;
+}
+
+@mixin background($bg_image, $position: center, $bg_size: cover, $bg_repeat: no-repeat, $bg_color: transparent){
+    background: $bg_color url($bg_image) $position/$bg_size $bg_repeat;
+}
+
+
+@mixin column-count($count) {
+    -webkit-column-count: $count;
+    -moz-column-count:    $count;
+    column-count:         $count;
+}
+
+@mixin column-gap($gap) {
+    -webkit-column-gap:   $gap;
+    -moz-column-gap:      $gap;
+    column-gap:           $gap;
+}
+
+@mixin center-absolute($position) {
+    position: absolute;
+
+    @if $position == 'vertical' {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @else if $position == 'horizontal' {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translate(-50%);
+    }
+    @else if $position == 'both' {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}

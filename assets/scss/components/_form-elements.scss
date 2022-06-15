@@ -1,0 +1,123 @@
+@mixin form-elements-font {
+    @include font(normal, 16, 1.4, black, 0);
+    @include fluid-font(100px, 1200px, 16px, 18px);
+}
+
+@mixin form-elements-sizes {
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding: 0 20px 0;
+}
+
+@mixin form-elements-style {
+    @include transition(all, 0.3s, ease-out);
+    @include order(2);
+    outline: 0;
+    background: transparent;
+    border: 2px solid #D9D9D9;
+    border-radius: 15px 0;
+
+    &:focus {
+        border-color: $color-main;
+
+        & ~ label {
+            color: $color-main;
+        }
+    }
+
+    &:disabled {
+        @extend %not-selectible;
+        opacity: 0.5;
+
+        & ~ label {
+            @extend %not-selectible;
+            opacity: 0.5;
+        }
+    }
+}
+
+.input_field {
+    @extend %flex;
+    @include flex-flow(row, wrap);
+    position: relative;
+    background: transparent;
+    margin-bottom: 20px;
+
+    label {
+        @include font(600, 16, 1.8, black, uppercase);
+        @include transition(all, .2s, ease-out);
+        @include order(1);
+        display: table;
+        margin-bottom: 5px;
+    }
+
+    input {
+        @include form-elements-font;
+        @include form-elements-style;
+        @include form-elements-sizes;
+
+        &:focus {
+            outline: 0;
+        }
+
+        &::-webkit-input-placeholder,
+        &::-moz-placeholder,
+        &:-ms-input-placeholder,
+        &:-moz-placeholder {
+            @include form-elements-font;
+            opacity: 0.5;
+        }
+    }
+
+    textarea {
+        @include form-elements-font;
+        @include form-elements-style;
+        -webkit-box-shadow: 0 0 0;
+        box-shadow: 0 0 0;
+        overflow: auto;
+        resize: none;
+        display: block;
+        width: 100%;
+        min-height: 200px;
+        padding: 20px;
+    }
+
+    textarea ~ label {
+        max-width: 80%;
+    }
+
+    select {
+        @include form-elements-font;
+        @include form-elements-style;
+        @include form-elements-sizes;
+        @extend %user-cursor;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    .valid-element:valid ~ label {
+        color: $color-main;
+    }
+
+    .valid-element:valid {
+        border-color: $color-main;
+    }
+
+    .valid-element:required:invalid ~ label,
+    input[type="email"].valid-element:required:invalid ~ label,
+    input[type="password"].valid-element:required:invalid ~ label,
+    input[type="url"].valid-element:required:invalid ~ label{
+        color: red;
+    }
+
+    .valid-element:required:invalid {
+        border-color: red;
+    }
+}

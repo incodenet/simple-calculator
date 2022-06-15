@@ -1,0 +1,128 @@
+@font-face {
+    font-family: $fontGentleman;
+    src: local('Gentleman'), local('Gentleman'),
+    url('../fonts/Gentleman800-Bold.woff2') format('woff2'),
+    url('../fonts/Gentleman800-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontGentleman;
+    src: local('Gentleman'), local('Gentleman'),
+    url('../fonts/Gentleman600-Regular.woff2') format('woff2'),
+    url('../fonts/Gentleman600-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontGentleman;
+    src: url('../fonts/Gentleman700-Medium.woff2') format('woff2'),
+    url('../fonts/Gentleman700-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontGentleman;
+    src: local('Gentleman'), local('Gentleman'),
+    url('../fonts/Gentleman500-Book.woff2') format('woff2'),
+    url('../fonts/Gentleman500-Book.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontGentleman;
+    src: local('Gentleman'), local('Gentleman'),
+    url('../fonts/Gentleman400-Light.woff2') format('woff2'),
+    url('../fonts/Gentleman400-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontGentleman;
+    src: local('Gentleman'), local('Gentleman'),
+    url('../fonts/Gentleman800-Bold.woff2') format('woff2'),
+    url('../fonts/Gentleman800-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontGentleman;
+    src: local('Gentleman'), local('Gentleman'),
+    url('../fonts/Gentleman700-Medium.woff2') format('woff2'),
+    url('../fonts/Gentleman700-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontGentleman;
+    src: local('Gentleman'), local('Gentleman'),
+    url('../fonts/Gentleman600-Regular.woff2') format('woff2'),
+    url('../fonts/Gentleman600-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontGentleman;
+    src: local('Gentleman'), local('Gentleman'),
+    url('../fonts/Gentleman500-Book.woff2') format('woff2'),
+    url('../fonts/Gentleman500-Book.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontGentleman;
+    src: local('Gentleman'), local('Gentleman'),
+    url('../fonts/Gentleman400-Light.woff2') format('woff2'),
+    url('../fonts/Gentleman400-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontClaredonLTStd;
+    src: local('ClarendonLTStd-Light'), local('ClarendonLTStd Light'),
+    url('../fonts/ClarendonLTStd-Light.woff2') format('woff2'),
+    url('../fonts/ClarendonLTStd-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontClaredonLTStd;
+    src: local('ClarendonLTStd'), local('ClarendonLTStd'),
+    url('../fonts/ClarendonLTStd.woff2') format('woff2'),
+    url('../fonts/ClarendonLTStd.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $fontClaredonLTStd;
+    src: local('ClarendonLTStd-Bold'), local('ClarendonLTStd Bold'),
+    url('../fonts/ClarendonLTStd-Bold.woff2') format('woff2'),
+    url('../fonts/ClarendonLTStd-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

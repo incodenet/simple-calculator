@@ -1,0 +1,108 @@
+@keyframes md-btn-ripple {
+    0% {
+        @include transform(translate(-50%, -50%) scale(0));
+        opacity: 0.5;
+    }
+    20% {
+        @include transform(translate(-50%, -50%) scale(1));
+        opacity: 1;
+    }
+    100% {
+        @include transform(translate(-50%, -50%) scale(1));
+        opacity: 0;
+    }
+}
+
+$button-height-sm: 32;
+$button-height-md: 40;
+$button-height-lg: 60;
+$button-height-xl: 75;
+
+$button-color:  (
+        btn-white white $color-main,
+        btn-pink $color-pink white,
+        btn-blue $color-blue white,
+);
+
+$button-size:  (
+        btn-sm $button-height-sm 20 16,
+        btn-md $button-height-md 20 20,
+        btn-lg $button-height-lg 22 22,
+        btn-xl $button-height-xl 35 24,
+);
+
+.btn {
+    @extend %button-font;
+    @extend %primary-transition;
+    @extend %user-cursor;
+    @extend %inline-middle;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+    border: 0;
+    min-width: 111px;
+    height: 48px;
+    line-height: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    &:not(.btn-basic) {
+        border-radius: 150px;
+    }
+
+    &:after {
+        content: '';
+        @extend %primary-transition;
+        background: rgba(255,255,255,0.2);
+        border-radius: 100px;
+        visibility: hidden;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform :translate(-50%, -50%) scale(0);
+        width: 130%;
+        height: rem(100);
+    }
+
+    &:not(:active):after {
+        animation: md-btn-ripple 1.5s cubic-bezier(0.12, 0.13, 0.51, 1.03);
+    }
+
+    @each $type in $button-color {
+        &.#{nth($type, 1)} {
+            background-color: #{nth($type, 2)};
+            color: #{nth($type, 3)};
+
+            &:hover {
+                background-color: darken(nth($type, 2), 8%);
+
+                &:after {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    @each $type in $button-size {
+        &.#{nth($type, 1)} {
+            height: #{nth($type, 2)}px;
+            line-height: #{nth($type, 2)}px;
+            padding: 0 #{nth($type, 3)}px;
+
+            .icon {
+                //margin-right: #{nth($type, 4)}px;
+                width: 24px;
+            }
+        }
+    }
+
+    &.btn-sm {
+        font-size: 15px;
+        padding: 0 16px;
+    }
+
+    &.btn-md {
+        font-size: 17px;
+    }
+}

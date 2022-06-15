@@ -1,0 +1,173 @@
+$key-role-color:  (
+        clear $color-orange true,
+        cancel $color-red true,
+        operator $color-grey false,
+        calculate $color-darkgrey true,
+);
+
+@keyframes key-ripple {
+    0% {
+        opacity: 0.5;
+        transform :translate(-50%, -50%) scale(0);
+    }
+    20% {
+        opacity: 1;
+        transform :translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform :translate(-50%, -50%) scale(1);
+    }
+}
+
+.content {
+    box-shadow: 0 11px 15px #eeeeee;
+    border-radius: 0 0 5px 5px;
+    max-width: 400px;
+    margin: 8% auto 5%;
+}
+
+.results {
+    @extend %flex;
+    @extend %align-bottom;
+    transition: all 0.15s ease;
+    box-shadow: 0 2px 15px #e8e7e7;
+    min-height: 150px;
+    width: 100%;
+    padding: 15px;
+
+    &:focus {
+        box-shadow: 0 5px 25px #d1d1d1;
+    }
+}
+
+.input-box {
+    @include font(normal, 30, 1, black, 0);
+    @include fluid-font(20px, 319px, 16px, 20px);
+    @include fluid-font(320px, 767px, 25px, 27px);
+    @include fluid-font(768px, 1200px, 26px, 31px);
+    cursor: default;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    border:0;
+    resize: none;
+    overflow: auto;
+    text-align: right;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.history {
+    @include font(normal, 10, 1, black, 0);
+    @include fluid-font(20px, 1200px, 7px, 12px);
+    position: absolute;
+    top: 15px;
+    right: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 15px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: none;
+}
+
+.keys_control {
+    @include transition(0.8s, all, 0.01s);
+    padding: 10px;
+}
+
+.keys {
+    @extend %flex;
+    @extend %align-between;
+    padding: 0;
+    margin: 0;
+
+    li {
+        position: relative;
+        list-style: none;
+        -ms-flex: 0 0 $keywidthRatio;
+        flex: 0 0 $keywidthRatio;
+        max-width: $keywidthRatio;
+        padding-top: $keywidthRatio;
+        width: 100%;
+        margin: $keySpaces;
+
+        &.equals {
+            -ms-flex: 0 0 calc(100% - (#{$keywidthRatio} * 2) - 78px);
+            flex: 0 0 calc(100% - (#{$keywidthRatio} * 2) - 78px);
+            max-width: calc(100% - (#{$keywidthRatio} * 2) - 78px);
+
+            .key {
+                border-radius: 100px;
+            }
+        }
+    }
+}
+
+.key {
+    @include font(normal, 30, 1, black, 0);
+    @include fluid-font(20px, 319px, 16px, 20px);
+    @include fluid-font(320px, 767px, 25px, 27px);
+    @include fluid-font(768px, 1200px, 26px, 30px);
+    @extend %flex;
+    @extend %align-center;
+    @extend %align-middle;
+    @include center-absolute(both);
+    transition: all 0.15s ease;
+    overflow: hidden;
+    outline: 0;
+    background-color: white;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+    @each $type in $key-role-color {
+        &[data-role="#{nth($type, 1)}"] {
+            background-color: #{nth($type, 2)};
+
+            @if nth($type, 3) == true {
+                color: white;
+            }
+
+            &:hover {
+                background-color: darken(nth($type, 2), 8%);
+            }
+        }
+    }
+
+    &:after {
+        content: '';
+        transition: all 0.2s ease-in-out;
+        background: rgba(0,0,0,0.2);
+        border-radius: 100px;
+        opacity: 0;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform :translate(-50%, -50%) scale(0);
+        width: 100%;
+        height: 100%;
+    }
+
+    &:not(:active):after {
+        animation: key-ripple 1s cubic-bezier(0.1, 0.1, 0.31, 0.53);
+    }
+
+    &:not(:active) {
+        box-shadow: 0 0 20px #b4b4b4;
+    }
+
+    svg {
+        max-width: 60%;
+        width: 100%;
+    }
+}

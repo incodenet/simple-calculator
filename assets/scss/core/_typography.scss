@@ -1,0 +1,29 @@
+h1,
+.h1 {
+    @extend %h1-font;
+}
+
+h2,
+.h2 {
+    @extend %h2-font;
+}
+
+h3,
+.h3 {
+    @extend %h3-font;
+}
+
+h4,
+.h4 {
+    @extend %h4-font;
+}
+
+h5,
+.h5 {
+    @extend %h5-font;
+}
+
+h6,
+.h6 {
+    @extend %h6-font;
+}

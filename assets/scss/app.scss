@@ -1,0 +1,71 @@
+// node-sass -o assets/css assets/scss -w --output-style compressed
+@import "utils/_module";
+//@import "components/_buttons";
+@import "components/_calc-buttons";
+//@import "components/_form-elements";
+
+
+.themes {
+    padding: 0;
+    margin: 0 0 50px;
+    list-style: none;
+}
+
+.theme {
+    @extend %primary-transition;
+    @include font(600, 15, 35px, white, uppercase);
+    @include fluid-font(20px, 319px, 12px, 14px);
+    @include fluid-font(320px, 767px, 14px, 15px);
+    @include fluid-font(768px, 1200px, 15px, 15px);
+    letter-spacing: 0.8px;
+    text-align: center;
+    background-color: #673AB7;
+    border-radius: 100px;
+    cursor: pointer;
+    min-width: 80px;
+    height: 35px;
+    margin: 0 1%;
+    padding: 0 15px;
+
+    &:hover {
+         background-color: darken(#673AB7, 10%);
+    }
+}
+
+.night-theme {
+    @include transition(0.8s, all, 0.01s);
+    background-color: #1c1c1c;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: white;
+    }
+
+    .content {
+        box-shadow: 0 0 15px #eeeeee;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .display {
+        background-color: white;
+    }
+
+    .keys_control {
+        background-color: white;
+    }
+}
+
+.day-theme {
+    background-color: white;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: black;
+    }
+
+    .keys_control {
+        background-color: #fafafa;
+    }
+}
+
+@import "layouts/_footer";
+@import "core/_helpers";

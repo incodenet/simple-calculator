@@ -1,0 +1,20 @@
+{
+  "name": "Website",
+  "short_name": "Website",
+  "icons" : [
+    {
+      "src": "img/512.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "",
+  "theme_color": "#0c101b",
+  "background_color": "#0c101b",
+  "display": "standalone"
+}

@@ -1,0 +1,17 @@
+@media only screen and (min-width: 768px) {
+    @import "utils/_module";
+
+
+}
+
+@media only screen and (min-width: 992px) {
+    @import "utils/_module";
+
+
+}
+
+
+// @media only screen and (device-width: 1024px) and (device-height: 1366px) {}
+// @media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape) {}
+// @media (max-width: 1024px) {}
+// @media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {}
